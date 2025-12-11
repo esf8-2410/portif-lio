@@ -1,0 +1,171 @@
+/* --- Configuração Global e Fontes --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-dark: #160021;
+    --bg-light-dark: #23062f;
+    --text-primary: #fcecff;
+    --text-secondary: #d8aee3;
+    --accent-color: #ff4fd8; /* rosa neon */
+    --accent-color-2: #a66bff; /* roxo claro */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* TITULOS COM DEGRADÊ FEMININO */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-color-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Seções Alternadas --- */
+.section-darker {
+    background: linear-gradient(180deg, #1f032b, #2b0840);
+}
+
+section {
+    padding: 6rem 0;
+}
+
+/* --- Navbar "Glassmorphism" Feminina --- */
+.navbar-glass {
+    background: rgba(60, 0, 80, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 100, 240, 0.3);
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+}
+
+/* Navbar links */
+.nav-link {
+    color: var(--text-primary) !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* --- HERO (com fundo personalizado) --- */
+.hero-section {
+    min-height: 100vh;
+    background: 
+        linear-gradient(rgba(40, 0, 60, 0.7), rgba(20, 0, 30, 0.95)),
+        url('planodefundo.jpg') no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.foto-perfil {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 25px rgba(255, 79, 216, 0.6);
+}
+
+/* --- Typewriter (efeito máquina de escrever) --- */
+.typewriter-text {
+    font-weight: 600;
+    color: var(--accent-color);
+    border-right: 2px solid var(--accent-color);
+    animation: blinkCursor 0.7s infinite;
+}
+
+@keyframes blinkCursor {
+    from { border-right-color: var(--accent-color); }
+    to { border-right-color: transparent; }
+}
+
+/* --- Project Cards (Glassmorphism + feminino) --- */
+.project-card {
+    background: rgba(100, 0, 120, 0.35);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 150, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 80, 200, 0.3);
+    border-color: rgba(255, 120, 250, 0.5);
+}
+
+/* --- Badges --- */
+.badge {
+    font-size: 0.9rem;
+}
+
+/* --- Skills Tags Femininas --- */
+#skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background: linear-gradient(90deg, var(--accent-color-2), var(--accent-color));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: 0.2s ease;
+    box-shadow: 0 0 15px rgba(255, 79, 216, 0.25);
+}
+
+.skill-tag:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 100, 240, 0.6);
+}
+
+/* --- Footer Feminino --- */
+footer {
+    background: linear-gradient(180deg, #1f032b, #14001c);
+    border-top: 1px solid rgba(255, 50, 220, 0.3);
+}
+
+.btn-social {
+    color: var(--text-secondary);
+    font-size: 2rem;
+    transition: 0.2s ease;
+}
+
+.btn-social:hover {
+    color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* --- Fade-in Animation --- */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
